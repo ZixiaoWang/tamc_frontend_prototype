@@ -1,0 +1,81 @@
+{
+    "content":[
+                    {
+                        "url":"/tamc/templates/slim-header.html",
+                        "logo":"/tamc/img/logo.png",
+                        "items":[
+                        {
+                            "name":"Seminar",
+                            "forpanel":{
+                            "image":"http://placehold.it/375x375",
+                            "title":"Upcoming Seminars",
+                            "lists":[
+                                {
+                                "title":"TAMC one on one (Guest speaker 1)",
+                                "url":"./seminar.html"
+                                },
+                                {
+                                "title":"Club Culture in Asia - Local Club Owners",
+                                "url":"#"
+                                },
+                                {
+                                "title":"Club Culture in Asia - Regional Club Owners",
+                                "url":"#"
+                                },
+                                {
+                                "title":"Club Culture in Asia - Local Promoters",
+                                "url":"#"
+                                },
+                                {
+                                "title":"Asia Music Festival Insight",
+                                "url":"#"
+                                },
+                                {
+                                "title":"TAMC one on one (Guest speaker 2)",
+                                "url":"#"
+                                }
+                            ]
+                            }
+                        },
+                        {"name":"Events", "url":"./events.html"},
+                        {"name":"Exhibition", "url":"./exhibition.html"},
+                        {"name":"About TAMC","url":"./about.html"},
+                        {"name":"Contact Us","url":"./contactUs.html"}
+                        ],
+                        "active":2
+                    },
+                    {
+                        "url":"/tamc/templates/paragraph.html",
+                        "title":"Exhibition A TAMC one one on",
+                        "content":"Praesent vitae ante velit. Duis cursus tincidunt urna faucibus varius. Morbi imperdiet ex ut tempor ornare. Sed rhoncus lectus leo, a porttitor orci eleifend et. Suspendisse potenti. Fusce sit amet rutrum nulla. Sed vitae augue vel orci efficitur ultricies vel lacinia tortor. Duis tempus suscipit ante,"
+                    },
+                    {
+                        "url":"/tamc/templates/image-event.html",
+                        "title":"Cum sociis natoaue panatibus etmas nisdis partiusdf movnes",
+                        "image":"http://placehold.it/375x375",
+                        "content":"Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+                        "button":"SEE OUR CONFERENCE",
+                        "link":"http://google.com"
+                    },
+                    {
+                        "url":"/tamc/templates/video-event.html",
+                        "title":"Cum sociis natoaue panatibus etmas nisdis partiusdf movnes",
+                        "image":"http://placehold.it/375x375",
+                        "content":"Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+                        "button":"SEE OUR CONFERENCE",
+                        "link":"https://www.youtube.com/watch?v=TEaE2SkPunY"
+                    },
+                    {
+                        "url":"/tamc/templates/image-slider.html",
+                        "images":[
+                        {
+                            "url":"/tamc/img/slide-demo-1.jpg"
+                        }
+                        ]
+                    },
+                    {
+                        "url":"/tamc/templates/footer.html",
+                        "logo":"/tamc/img/logo-footer.png"
+                    }
+            ]
+}

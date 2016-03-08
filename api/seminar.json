@@ -1,0 +1,154 @@
+{
+    "content":[  
+  {
+    "url":"/tamc/templates/slim-header.html",
+    "logo":"/tamc/img/logo.png",
+    "items":[
+      {
+        "name":"Seminar",
+        "forpanel":{
+          "image":"http://placehold.it/375x375",
+          "title":"Upcoming Seminars",
+          "lists":[
+            {
+              "title":"TAMC one on one (Guest speaker 1)",
+              "url":"./seminar.html"
+            },
+            {
+              "title":"Club Culture in Asia - Local Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Regional Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Local Promoters",
+              "url":"#"
+            },
+            {
+              "title":"Asia Music Festival Insight",
+              "url":"#"
+            },
+            {
+              "title":"TAMC one on one (Guest speaker 2)",
+              "url":"#"
+            }
+          ]
+        }
+      },
+      {"name":"Events",
+			"url":"./events.html"},
+      {"name":"Exhibition",
+			"url":"./exhibition.html"},
+      {"name":"About TAMC",
+			"url":"./about.html"},
+      {"name":"Contact Us",
+			"url":"./contactUs.html"}
+    ],
+    "active":0
+  },
+  {
+    "url":"/tamc/templates/paragraph.html",
+    "title":"Seminar A TAMC one on one",
+    "content":"I love cellos, something magical about this instrument, especially when one can play it like this.  An instrument of the soul.   No better way to express the meaning of Christmas.  I wish the world would settle down and stop hating and killing and realize that we are all one in this vast universe. We are spinning out of control and it is like a tornado, the only way out is exploding.  It is so much easier to love one"
+  },
+  {
+    "url":"/tamc/templates/tabs.html",
+    "tabs":[
+      { "name":"Register Now",
+			"url":"./seminar-register.html"  },
+      { "name":"Conference Details",
+			"url":"./seminar.html" },
+      { "name":"Speakers",
+			"url":"./seminar-speaker.html" }
+    ],
+    "active":1
+  },
+  {
+    "url":"/tamc/templates/image-event.html",
+    "title":"Cum sociis natoaue panatibus etmas nisdis partiusdf movnes",
+    "image":"http://placehold.it/375x375",
+    "content":"Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+    "button":"SEE OUR CONFERENCE",
+    "link":"http://google.com"
+  },
+  {
+    "url":"/tamc/templates/video-event.html",
+    "title":"Cum sociis natoaue panatibus etmas nisdis partiusdf movnes",
+    "image":"http://placehold.it/375x375",
+    "content":"Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+    "button":"SEE OUR CONFERENCE",
+    "link":"https://www.youtube.com/watch?v=TEaE2SkPunY"
+  },
+  {
+    "url":"/tamc/templates/image-slider.html",
+    "images":[
+      {
+        "url":"/tamc/img/slide-demo-1.jpg"
+      }
+    ]
+  },
+  {
+    "url":"/tamc/templates/schedule.html",
+    "events":[
+      {
+        "date":"2 JUN",
+        "week":"THURSDAY",
+        "dayEvents":[
+          {
+            "time":"10:00 AM",
+            "events":[
+              {
+                "title":"First Event",
+                "content":"Feel free to SHARE but do not reupload the video. Thank you!"
+              }
+            ]
+          },
+          {
+            "time":"12:30 AM",
+            "events":[
+              {
+                "title":"Exhibiton",
+                "content":"containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date":"3 JUN",
+        "week":"FRIDAY",
+        "dayEvents":[
+          {
+            "time":"10:00 AM",
+            "events":[
+              {
+                "title":"Registration $ Badege Pickup Pioneer DJ celebrates 20 Years",
+                "content":"containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+              }
+            ]
+          },
+          {
+            "time":"12:30 PM",
+            "events":[
+              {
+                "title":"Events two",
+                "content":"whatever it may be"
+              },
+              {
+                "title":"Events three",
+                "content":"containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "url":"/tamc/templates/footer.html",
+    "logo":"/tamc/img/logo-footer.png"
+  }
+]
+}

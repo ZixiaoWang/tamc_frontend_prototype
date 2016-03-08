@@ -1,0 +1,22 @@
+<section mark="image-event.html">
+  <div class="container">
+    <div class="row slim">
+      <div class="col-xs-12 col-sm-5">
+        <div class="event-media">
+          <img src="{{template.image}}" alt="" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-7">
+        <div class="event-title">
+          <span class="tamc-h2">{{template.title}}</span>
+        </div>
+        <div class="event-content">
+          <p ng-bind-html="template.content">
+          </p>
+          <br>
+          <a ng-href="{{template.link}}" type="button" name="button" class="tamc-btn" ng-show="template.button">{{template.button}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

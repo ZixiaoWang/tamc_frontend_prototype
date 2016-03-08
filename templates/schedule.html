@@ -1,0 +1,38 @@
+<section mark="schedule.html">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <div class="banner-label">
+          <div class="deck"></div>
+          <span class="tamc-h2">
+            <p>
+            Schedule
+            </p>
+          </span>
+        </div><!-- banner-label -->
+        <div class="banner-image">
+          <div class="schedule-pannel grey-text">
+
+            <div class="row" ng-repeat="monthEvent in template.events">
+
+              <div class="schedule-month">
+                <span class="month"><b>{{monthEvent.date}}</b> <br><span class="week">{{monthEvent.week}}</span></span>
+                <div class="schedule-time" ng-repeat="dayEvent in monthEvent.dayEvents">
+                  <b>{{dayEvent.time}}</b>
+                  <div class="schedule-event" ng-repeat="event in dayEvent.events">
+                    <a ng-href="{{event.link}}" class="tamc-a" target="_blank"><b>{{event.title}}</b></a> <br>
+                    {{event.content}}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

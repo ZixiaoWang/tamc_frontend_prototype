@@ -1,0 +1,131 @@
+{
+    "content":[
+  {
+    "url":"/tamc/templates/slim-header.html",
+    "logo":"/tamc/img/logo.png",
+    "items":[
+      {
+        "name":"Seminar",
+        "forpanel":{
+          "image":"http://placehold.it/375x375",
+          "title":"Upcoming Seminars",
+          "lists":[
+            {
+              "title":"TAMC one on one (Guest speaker 1)",
+              "url":"./seminar.html"
+            },
+            {
+              "title":"Club Culture in Asia - Local Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Regional Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Local Promoters",
+              "url":"#"
+            },
+            {
+              "title":"Asia Music Festival Insight",
+              "url":"#"
+            },
+            {
+              "title":"TAMC one on one (Guest speaker 2)",
+              "url":"#"
+            }
+          ]
+        }
+      },
+      {"name":"Events", "url":"./events.html"},
+      {"name":"Exhibition", "url":"./exhibition.html"},
+      {"name":"About TAMC","url":"./about.html"},
+      {"name":"Contact Us","url":"./contactUs.html"}
+    ],
+    "active":0
+  },
+  {
+    "url":"/tamc/templates/paragraph.html",
+    "title":"Seminar A TAMC one on two",
+    "content":"I love cellos, something magical about this instrument, especially when one can play it like this.  An instrument of the soul.   No better way to express the meaning of Christmas.  I wish the world would settle down and stop hating and killing and realize that we are all one in this vast universe. We are spinning out of control and it is like a tornado, the only way out is exploding.  It is so much easier to love one"
+  },
+  {
+    "url":"/tamc/templates/tabs.html",
+    "tabs":[
+      { "name":"Register Now", "url":"./seminar-register.html"  },
+      { "name":"Conference Details", "url":"./seminar.html" },
+      { "name":"Speakers", "url":"./seminar-speaker.html" }
+    ],
+    "active":2
+  },
+  {
+    "url":"/tamc/templates/speaker-slider.html",
+    "speakerGroups":[
+      {
+        "title":"Speaker group one",
+        "speakers":[
+          {
+            "name":"First one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Second one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Third one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Fourth one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Fifth one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          }
+        ]
+      },
+      {
+        "title":"Speaker group one",
+        "speakers":[
+          {
+            "name":"First one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Second one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Third one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Fourth one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          },
+          {
+            "name":"Fifth one",
+            "content":"something something",
+            "image":"http://placehold.it/300x300?text=first one"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "url":"/tamc/templates/footer.html",
+    "logo":"/tamc/img/logo-footer.png"
+  }
+]
+}

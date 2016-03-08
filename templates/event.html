@@ -1,0 +1,50 @@
+<section ng-repeat="event in template.events" mark="event.html">
+  <div class="container">
+    <div class="row slim">
+      <div class="col-xs-12 col-md-4" ng-class="{'col-md-push-8':$index%2==1}">
+        <div class="event-post">
+          <img src="{{event.image}}" alt="" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-8" ng-class="{'col-md-pull-4':$index%2==1}">
+        <h6 class="tamc-h2">{{event.title}}</h6>
+        <span class="tamc-p" ng-bind-html="event.content">
+        </span>
+        <br><br>
+        <button type="button" name="button" class="tamc-btn" ng-click="showLity(template.events, $index)">EVENT DETAIL</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- page cover -->
+<div class="page-cover" ng-class="{'show':lityShow}">
+  <div class="container">
+    <div class="row lity-row">
+      <div class="col-xs-1">
+        <div class="page previous-page" ng-click=lastEvent()></div>
+      </div>
+      <div class="col-xs-10">
+        <div class="close-lity" ng-click="closeLity()"></div>
+        <div class="lity-container">
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <span class="tamc-h1">{{lityTitle}}</span>
+              <p class="tamc-p black-text" ng-bind-html="lityContent">
+              </p>
+              <br><br>
+              <a ng-href="{{lityLink}}" target="_blank" type="button" name="button" class="tamc-btn">BOOK YOUR TICKET HERE</a>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="lity-post">
+                <img src="{{lityImage}}" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div class="page next-page" ng-click="nextEvent()"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="description" content="The Asia Music Conference">
+    <title>TAMC</title>
+    <link rel="stylesheet" href="/tamc/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/tamc/css/main.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="/tamc/lib/jquery-2.1.4.min.js"></script>
+    <script src="/tamc/lib/angular.min.js" charset="utf-8"></script>
+    <script src="/tamc/lib/bootstrap.min.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="shadow" ng-controller="shadowController" style="pointer-events:none;">
+    <div ng-include="template.url" ng-repeat="template in templates"></div>
+    <div style="width:100%; height:100%; position:fixed; top:0px; left:0px;"></div>
+  </body>
+  <script type="text/javascript">
+    var app = angular.module("shadow",[]);
+  </script>
+  <script src="/tamc/admin/js/dummy.js" charset="utf-8"></script>
+</html>

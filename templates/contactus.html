@@ -1,0 +1,70 @@
+<section mark="contactUs.html">
+  <div class="container">
+    <div class="row slim">
+      <div class="col-xs-12 col-md-6">
+        <h2 class="tamc-h1">{{template.title}}</h2>
+        <span class="tamc-p">
+          {{template.content}}
+        </span>
+        <br><br>
+        <div>
+          <h4>Share to:</h4>
+          <ul class="share-groups">
+            <li ng-click="shareToFacebook()"><img src="./img/facebook.png" alt="" /></li>
+            <li ng-click="shareToTwitter()"><img src="./img/twitter.png" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="contact-us-form">
+          <div class="deck"></div>
+
+          <div class="form">
+            <div class="tamc-form-group">
+              <label for="title">Title</label>
+              <select class="tamc-select tamc-input" name="title">
+                <option value="mr.">Mr.</option>
+                <option value="ms.">Ms.</option>
+                <option value="mrs.">Mrs.</option>
+                <option value="miss.">Miss.</option>
+              </select>
+            </div>
+            <div class="tamc-form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName" class="tamc-input">
+            </div>
+            <div class="tamc-form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName" class="tamc-input">
+            </div>
+            <div class="tamc-form-group">
+              <label for="gender">Sex</label>
+              <div class="tamc-radio">
+                <input type="radio" name="gender" value="male">
+                <label for="male">Male</label>
+              </div>
+              <div class="tamc-radio">
+                <input type="radio" name="gender" value="female">
+                <label for="male">Female</label>
+              </div>
+            </div>
+            <div class="tamc-form-group">
+              <label for="phone">Telephone</label>
+              <input type="text" name="phone" class="tamc-input">
+            </div>
+            <div class="tamc-form-group">
+              <label for="email">Email</label>
+              <input type="text" name="email" class="tamc-input">
+            </div>
+            <br><br>
+            <div class="tamc-form-group">
+              <label for=""></label>
+              <button type="button" name="submit" class="tamc-btn">SEND THE FORM</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

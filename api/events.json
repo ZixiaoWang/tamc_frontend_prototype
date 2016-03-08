@@ -1,0 +1,73 @@
+{"content":[
+  {
+    "url":"/tamc/templates/slim-header.html",
+    "logo":"/tamc/img/logo.png",
+    "items":[
+      {
+        "name":"Seminar",
+        "forpanel":{
+          "image":"http://placehold.it/375x375",
+          "title":"Upcoming Seminars",
+          "lists":[
+            {
+              "title":"TAMC one on one (Guest speaker 1)",
+              "url":"./seminar.html"
+            },
+            {
+              "title":"Club Culture in Asia - Local Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Regional Club Owners",
+              "url":"#"
+            },
+            {
+              "title":"Club Culture in Asia - Local Promoters",
+              "url":"#"
+            },
+            {
+              "title":"Asia Music Festival Insight",
+              "url":"#"
+            },
+            {
+              "title":"TAMC one on one (Guest speaker 2)",
+              "url":"#"
+            }
+          ]
+        }
+      },
+      {"name":"Events", "url":"./events.html"},
+      {"name":"Exhibition", "url":"./exhibition.html"},
+      {"name":"About TAMC","url":"./about.html"},
+      {"name":"Contact Us","url":"./contactUs.html"}
+    ],
+    "active":1
+  },
+  {
+    "url":"/tamc/templates/paragraph.html",
+    "title":"Events",
+    "content":"Praesent vitae ante velit. Duis cursus tincidunt urna faucibus varius. Morbi imperdiet ex ut tempor ornare. Sed rhoncus lectus leo, a porttitor orci eleifend et. Suspendisse potenti. Fusce sit"
+  },
+  {
+    "url":"/tamc/templates/event.html",
+    "events":[
+      {
+        "title":"Penatibus tamd nidghs",
+        "image":"/tamc/img/event1.jpeg",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit hendrerit ultricies. Curabitur sodales ex massa, nec posuere mauris lobortis quis. Duis diam ipsum, condimentum nec condimentum dapibus, fermentum nec elit. Sed ac tortor ornare, egestas sem non, lobortis nunc. Vivamus feugiat eu mauris id tincidunt. Etiam mattis feugiat iaculis. Donec egestas, est eu interdum mattis, ",
+        "link":"http://google.com"
+      },
+      {
+        "title":"Penatibus tamd nidghs Penatibus tamd nidghs Penatibus tamd nidghs",
+        "image":"/tamc/img/event2.jpeg",
+        "content":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit hendrerit ultricies. Curabitur sodales ex massa, nec posuere mauris lobortis quis. Duis diam ipsum, condimentum nec condimentum dapibus, fermentum nec elit. Sed ac tortor ornare, egestas sem non, lobortis nunc. Vivamus feugiat eu mauris id tincidunt. Etiam mattis feugiat iaculis. Donec egestas, est eu interdum mattis, ",
+        "link":"http://yahoo.com"
+      }
+    ]
+  },
+  {
+    "url":"/tamc/templates/footer.html",
+    "logo":"/tamc/img/logo-footer.png"
+  }
+]
+}

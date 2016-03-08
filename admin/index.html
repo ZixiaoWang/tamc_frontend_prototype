@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TAMC ADMIN PANEL</title>
+        <link rel="stylesheet" href="/tamc/css/main.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/tamc/admin/css/main.css">
+        <script src="./lib/angular.min.js"></script>
+        <script type="text/javascript">
+        function leave(ev){
+          ev.target.style.borderTop = '8px solid transparent';
+        }
+        function allowDrop(ev) {
+          ev.target.style.borderTop = '8px solid orange';
+          ev.preventDefault();
+        }
+        function drag(ev) {
+          var id = ev.target.id;
+          console.log(id);
+          var $scope = angular.element(document.getElementById("tamcController")).scope();
+          var template = $scope.modules[id].template;
+          ev.dataTransfer.setData("text", template);
+        }
+        function drop(ev) {
+          ev.target.style.borderTop = '8px solid transparent';
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          var index = ev.target.id - 100;
+          console.log(data);
+          var $scope = angular.element(document.getElementById("tamcController")).scope();
+          $scope.dummyCodes.splice(index+1, 0, JSON.parse(data));
+          $scope.$apply();
+          localStorage.setItem('targetJSON', JSON.stringify($scope.dummyCodes));
+          document.getElementById('iframe').contentWindow.location.reload();
+          console.log($scope.dummyCodes);
+        }
+        </script>
+    </head>
+    <body ng-app="tamcPanel" ng-controller="tamcController" id="tamcController">
+        <div class="col-6 bg-dark-2">
+          <span class="module-title">PREVIEW</span>
+          <!-- <object type="text/html" data="/tamc/index.html" style="width:90%; border:0px; margin-left:5%; height:100vh;"></object> -->
+          <iframe src="/tamc/dummy.html" height="100%" style="width:90%; border:0px; margin-left:5%;" id="iframe"></iframe>
+        </div>
+
+        <div class="col-3 inset-shadow">
+            <span class="module-title">CONTROL</span>
+            <div class="container" style="height:90vh;">
+              <div class="cut-line" ondragover="allowDrop(event)" ondragleave="leave(event)" ondrop="drop(event)" id="99"></div>
+              <div class="code-segment" ng-repeat="code in dummyCodes" ng-show="code">
+                <textarea name="name" rows="8" cols="40" class="textarea" json-text ng-model="code"></textarea>
+                <div class="closeButton" ng-click="removeThisRibbon($index)" mark="{{$index}}">✖</div>
+                <div class="cut-line" ondragover="allowDrop(event)" ondragleave="leave(event)" ondrop="drop(event)" id="{{$index+100}}"></div>
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="button" name="button" class="ctl-btn">SAVE</button>
+              <button type="button" name="button" class="ctl-btn" ng-click="preview()">Preview</button>
+            </div>
+        </div>
+
+        <!-- Templates -->
+        <div class="col-2 bg-dark-2">
+            <span class="module-title">TEMPLATES</span>
+            <div class="container">
+                <div class="slide margin-lr" ng-repeat="module in modules">
+                    <div class="slide-cover"><b>{{module.title}}</b></div>
+                    <img ng-src="{{module.url}}" alt="" draggable="true" ondragstart="drag(event)" id="{{$index}}">
+                </div>
+            </div>
+        </div>
+
+        <!-- Pages -->
+        <div class="col-1 bg-dark" ng-init="dummyURL = '/tamc/api/index.json'">
+            <span class="module-title">PAGES</span>
+            <div class="container">
+                <a class="page-item" ng-repeat="page in pages" ng-click="editPage(page.url)">{{page.name}}</a>
+                <a class="page-item page-add">+</a>
+            </div>
+        </div>
+    </body>
+    <script src="./js/pages.js"></script>
+    <script src="./js/templates.js"></script>
+    <script>
+        localStorage.clear();
+        var app = angular.module('tamcPanel', []);
+        app.controller('tamcController', function($scope, $window, $http){
+            $scope.dummyURL = '/tamc/api/index.json';
+            $scope.modules = $window.modules;
+            $scope.pages = $window.pages;
+            $scope.toJson = function(json){
+              return angular.toJson(json, true);
+            }
+            $scope.editPage = function(url){
+              $scope.dummyURL = url;
+              $http.get($scope.dummyURL, {headers:{'Content-Type':'application/json'}}).success(function(res){
+                $scope.codes = res.content;
+                $scope.dummyCodes = angular.copy($scope.codes);
+                localStorage.setItem('targetJSON', JSON.stringify($scope.dummyCodes));
+                document.getElementById('iframe').contentWindow.location.reload();
+                //$scope.jsonCodes = angular.toJson($scope.dummyCodes, true);
+              });
+            }
+            $scope.preview = function(){
+              localStorage.setItem('targetJSON', JSON.stringify($scope.dummyCodes));
+              console.log($scope.dummyCodes);
+              document.getElementById('iframe').contentWindow.location.reload();
+            }
+            $scope.removeThisRibbon = function(index){
+              $scope.dummyCodes.splice(index, 1);
+              console.log($scope.dummyCodes);
+              localStorage.setItem('targetJSON', JSON.stringify($scope.dummyCodes));
+              document.getElementById('iframe').contentWindow.location.reload();
+            }
+
+            $http.get($scope.dummyURL, {headers:{'Content-Type':'application/json'}}).success(function(res){
+              $scope.codes = res.content;
+              $scope.dummyCodes = angular.copy($scope.codes);
+              //$scope.jsonCodes = angular.toJson($scope.dummyCodes, true);
+            });
+        })
+        .directive("contenteditable", function() {
+        return {
+          restrict: "A",
+          require: "ngModel",
+          link: function(scope, element, attrs, ngModel) {
+            function read() {
+              ngModel.$setViewValue(element.html());
+            }
+            ngModel.$render = function() {
+              element.html(ngModel.$viewValue || "");
+            };
+            element.bind("blur keyup change", function() {
+              scope.$apply(read);
+            });
+          }
+        };
+      })
+      .directive('codetext', function(){
+        return{
+          restrict:'E',
+          require:'ngModel',
+          template:'<textarea ng-model="toJson(code)" class="textarea"></textarea>',
+          scope:true
+        }
+      })
+      .directive('jsonText', function() {
+        return {
+            restrict: 'A',
+            require: 'ngModel',
+            scope:{dummyCodes:'='},
+            link: function(scope, element, attr, ngModel) {
+              function into(input) {
+                dummyCodes = JSON.parse(input);
+                scope.$parent.dummyCodes[scope.$parent.$index] = dummyCodes;
+                return JSON.parse(input);
+              }
+              function out(data) {
+                return JSON.stringify(data, null, 2);
+                //return angular.toJson(data, true);
+              }
+              ngModel.$parsers.push(into);
+              ngModel.$formatters.push(out);
+            }
+        };
+    });
+    </script>
+    <script src="./js/dummy.js" charset="utf-8"></script>
+</html>

@@ -1,0 +1,83 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="orange-angel"></div>
+        <!-- ------------- For mobile ------------- -->
+        <div class="slimheader-logo tamc-color hidden-md hidden-lg pointer">
+          <b><img src="{{template.logo}}" alt="" style="max-width:210px;"/></b>
+        </div>
+        <!-- ------------- For mobile ------------- -->
+        <ul class="language-switch hidden-xs hidden-sm hidden-md">
+          <li><a href="#" class="active">EN</a></li>
+          <li><a href="#">简</a></li>
+        </ul>
+        <div class="hamburger hidden-md hidden-lg" ng-click="openSideBar()" id="hamburger"></div>
+      </div>
+    </div><!-- end of cell -->
+    <div class="row">
+      <div class="col-lg-12 logo hidden-xs hidden-sm">
+        <div class="address">
+          <p></p>
+          <p>2-4 JUN 2016</p>
+          <p><strong>MACAU</strong></p>
+        </div>
+        <div class="brand-logo tamc-color">
+          <img src="{{template.logo}}" alt="" />
+        </div>
+      </div>
+    </div><!-- end of logo -->
+    <div class="row">
+      <div class="col-lg-12 hidden-xs hidden-sm">
+        <nav class="nav">
+          <ul>
+            <li ng-repeat="item in template.items" ng-class="{'active':template.active==$index}" ng-click="openPanel($index)"><a ng-href="{{item.url}}">{{item.name}}</a><div class="li-beck" id="deck-{{$index}}" ng-if="item.forpanel != null"></div></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="slimheader-panel" ng-repeat="item in template.items" ng-if="item.forpanel != null" id="{{$index}}">
+    <div class="container">
+      <div class="row slim">
+        <div class="col-xs-5">
+          <div class="event-media">
+            <img src="{{item.forpanel.image}}" alt="" />
+          </div>
+        </div>
+        <div class="col-xs-7">
+          <h2 class="tamc-color">{{item.forpanel.title}}</h2>
+          <br>
+          <ul class="tamc-ul">
+            <li ng-repeat="list in item.forpanel.lists"><a href="{{list.url}}">{{list.title}}</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of mega-panel -->
+
+  <div class="sidemenu hidden-md hidden-lg" id="sidemenu">
+
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="language-switch"  style="font-size:30px;">
+            <li><a href="#" class="active">EN</a></li>
+            <li><a href="#">简</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" ng-repeat="item in template.items">
+        <div class="col-xs-12">
+          <h2><a ng-href="{{item.url}}" class="tamc-anchor">{{item.name}}</a></h2>
+          <div class="side-sub-panel" ng-if="item.forpanel != null">
+            <span class="tamc-h1">{{item.forpanel.title}}</span>
+            <ul class="tamc-ul">
+              <li ng-repeat="list in item.forpanel.lists"><a href="{{list.url}}">{{list.title}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</header><!-- end of header -->
