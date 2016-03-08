@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css" media="screen" title="no title" charset="utf-8">
+    <script src="./lib/angular.min.js" charset="utf-8"></script>
+    <title>Contact Us</title>
+  </head>
+  <body ng-app="contactUs" ng-controller="contactUsController">
+    <div ng-repeat="template in templates" ng-include="template.url"></div>
+  </body>
+  <script src="./js/contactus.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    angular.module("contactUs", [])
+      .controller("contactUsController", function($scope){
+        $scope.templates = contactUs;
+        $scope.openPanel = function(index){
+          angular.element(document.getElementById(index)).toggleClass("show");
+          angular.element(document.getElementById("deck-"+index)).toggleClass("show");
+        }
+        $scope.openSideBar = function(){
+          angular.element(document.getElementById("sidemenu")).toggleClass("open-side-menu");
+          angular.element(document.getElementById("hamburger")).toggleClass("open-side-menu");
+        }
+        $scope.shareToFacebook = function(){
+          window.open('http://www.facebook.com/share.php?u=' + location.href);
+        }
+        $scope.shareToTwitter = function(){
+          window.open('http://twitter.com/share?&amp;url=' + location.href);
+        }
+      })
+  </script>
+</html>

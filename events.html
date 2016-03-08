@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css" media="screen" title="no title" charset="utf-8">
+    <script src="./lib/angular.min.js" charset="utf-8"></script>
+    <script src="https://code.angularjs.org/1.2.25/angular-sanitize.js"></script>
+
+    <title>Events</title>
+  </head>
+  <body ng-app="events" ng-controller="eventsController">
+    <div ng-repeat="template in templates" ng-include="template.url"></div>
+  </body>
+  <script src="./js/events.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    angular.module("events", ['ngSanitize'])
+      .controller("eventsController", function($scope){
+        $scope.templates = events;
+        $scope.openPanel = function(index){
+          angular.element(document.getElementById(index)).toggleClass("show");
+          angular.element(document.getElementById("deck-"+index)).toggleClass("show");
+        }
+        $scope.showLity = function(event, index){
+          if(event[index].url != null){
+             location.href = event[index].url;
+          }else{
+            var temIndex = index;
+            $scope.lityShow = true;
+            $scope.lityTitle = event[index].title;
+            $scope.lityImage = event[index].image;
+            $scope.lityLink = event.link;
+            $scope.lityContent = event[index].details;
+            $scope.nextEvent = function(){
+                if(temIndex < event.length - 1){
+                $scope.lityTitle = event[temIndex+1].title;
+                $scope.lityImage = event[temIndex+1].image;
+                $scope.lityLink = event.link;
+                $scope.lityContent = event[temIndex+1].details;
+                temIndex++;
+                }
+            }
+            $scope.lastEvent = function(){
+                if(temIndex > 0){
+                $scope.lityTitle = event[temIndex-1].title;
+                $scope.lityImage = event[temIndex-1].image;
+                $scope.lityLink = event.link;
+                $scope.lityContent = event[temIndex-1].details;
+                temIndex--;
+                }
+            }
+          }
+        }
+        $scope.closeLity = function(){
+          $scope.lityShow = false;
+        }
+        $scope.openSideBar = function(){
+          angular.element(document.getElementById("sidemenu")).toggleClass("open-side-menu");
+          angular.element(document.getElementById("hamburger")).toggleClass("open-side-menu");
+        }
+      })
+  </script>
+</html>

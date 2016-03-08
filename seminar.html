@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./css/main.css" media="screen" title="no title" charset="utf-8">
+    <script src="./lib/angular.min.js" charset="utf-8"></script>
+    <script src="https://code.angularjs.org/1.2.25/angular-sanitize.js"></script>
+
+    <title>Conference</title>
+  </head>
+  <body ng-app="seminar" ng-controller="seminarController">
+    <div ng-repeat="template in templates" ng-include="template.url"></div>
+  </body>
+  <script src="./js/seminar.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    angular.module("seminar", ['ngSanitize'])
+      .controller("seminarController", function($scope){
+        $scope.templates = seminar;
+        $scope.openPanel = function(index){
+          angular.element(document.getElementById(index)).toggleClass("show");
+          angular.element(document.getElementById("deck-"+index)).toggleClass("show");
+        }
+        $scope.openSideBar = function(){
+          angular.element(document.getElementById("sidemenu")).toggleClass("open-side-menu");
+          angular.element(document.getElementById("hamburger")).toggleClass("open-side-menu");
+        }
+      })
+  </script>
+</html>
