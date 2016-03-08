@@ -5,8 +5,8 @@ Jan 2016
 
 # Description 
 This prototype was built for two reasons:
-1. I got paid.
-2. I need to practice AngularJS.
+* I got paid.
+* I need to practice AngularJS.
 
 # How can I preview this site?
 This prototype requires a web server. 
